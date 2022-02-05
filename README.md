@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -12,5 +8,8 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## TODO
-- Test Driven Development should be implemented (but this Challenge is time limited)
-- CSS Libraries can be used Tailwind
+- [X] CSS Libraries can be used Tailwind
+- [ ] Write tests
+- [ ] When all phases are completed, display a random fact from
+  https://uselessfacts.jsph.pl/random.json
+
