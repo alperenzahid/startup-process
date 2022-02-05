@@ -1,27 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import Retrieve from "./service/Retrieve";
-import PhaseData from "./model/PhaseData";
 import Phase from "./components/Phase/Phase";
+import {useStartup} from "./shared/context/TaskContext";
 
 function App() {
 
-  const [data, setData] = useState<PhaseData[]>();
-  useEffect(()=>{
-      const _data = Retrieve.phases();
-      setData(_data);
-  },[])
+  const {startUp} = useStartup();
+
+
   return (
       <div className="flex justify-center py-10">
           <div>
               <h1 className="text-2xl font-bold pb-5">
-                  My startup progress
+                  {startUp.name} progress
               </h1>
               {
-                  data ? <div>
+                  startUp.phases ? <div>
                       {
-                          data.map((d,index )=> {
-                              return <Phase data={d} index={index} />
+                          startUp.phases.map((d,index )=> {
+                              return <Phase key={`Phase${index}`} data={d} index={index} />
                           })
                       }
                   </div> : <div>

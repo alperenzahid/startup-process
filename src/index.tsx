@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {StartupProvider} from "./shared/context/TaskContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <StartupProvider>
+          <App />
+      </StartupProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

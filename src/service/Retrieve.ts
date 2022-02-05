@@ -1,32 +1,31 @@
-import TaskData from "../model/TaskData";
-import PhaseData from "../model/PhaseData";
+import TaskData from "../shared/model/TaskData";
+import PhaseData from "../shared/model/PhaseData";
+import Startup from "./Startup";
 
 export default class Retrieve{
 
-    public static phases(){
+    public static startUp(){
         const foundation = new PhaseData("Foundation", [
             new TaskData("Setup virtual office"),
             new TaskData("Set mission & vision"),
             new TaskData("Select business name"),
             new TaskData("Buy domains")
         ])
-        foundation.isCompleted = true; //TODO
 
         const discovery = new PhaseData("Discovery", [
             new TaskData("Create roadmap"),
             new TaskData("Competitor analysis")
         ])
-        discovery.tasks[0].isCompleted = true;
 
         const delivery = new PhaseData("Delivery", [
             new TaskData("Release marketing website"),
             new TaskData("Release MVP")
         ])
-        return [
+        return new Startup("My startup", [
             foundation,
             discovery,
             delivery
-        ]
+        ]);
     }
 
 }
