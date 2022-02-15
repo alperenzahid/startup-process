@@ -44,7 +44,7 @@ function StartupProvider({children}: any) {
 export function useStartup():{startUp: Startup, updateStartUp: Function} {
     const ret = useContext(StartupContext);
     if (!ret) {
-        throw new Error(`use method must be used within TasksProvider`)
+        throw new Error(`use startup method must be used within Startup Provider`)
     }
     return ret;
 }

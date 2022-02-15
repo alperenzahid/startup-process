@@ -13,7 +13,7 @@ export default function Phase({data, index}:{data:PhaseData, index:number}){
            </div>
             <div>
                 {data.tasks.map((d,index) => {
-                    return <Task key={index} data={d}/>
+                    return <Task key={index} tId={`${index} ${d.name}`} data={d}/>
                 })}
             </div>
         </div>

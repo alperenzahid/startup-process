@@ -1,6 +1,7 @@
 import TaskData from "../shared/model/TaskData";
 import PhaseData from "../shared/model/PhaseData";
 import Startup from "./Startup";
+import axios from "axios";
 
 export default class Retrieve{
 
@@ -28,4 +29,13 @@ export default class Retrieve{
         ]);
     }
 
+    public static async randomFacts(){
+        try {
+            const res = await axios.get('https://uselessfacts.jsph.pl/random.json')
+            return res.data.text;
+        }catch (e) {
+            console.log("Random facts retrieving error", e);
+            return "";
+        }
+    }
 }
